@@ -503,10 +503,5 @@ Through this project, I strengthened my practical understanding of:
 - API testing and debugging
 - Collaborative software development
 
----
 
-## 🔗 Project Links
 
-- 💻 **GitHub Repository:** [Library Management System](https://github.com/MargaretPabustan/Library-Management-System)
-- 🎥 **Demo Video:** [View Project Demo](YOUR_GOOGLE_DRIVE_LINK)
-- 🌐 **Live Demo:** [View Live Application](YOUR_RENDER_LINK)
