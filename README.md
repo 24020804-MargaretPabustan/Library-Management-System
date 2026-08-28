@@ -104,15 +104,17 @@ library-1/
 
 ## 🧰 Tech Stack
 
+
 | Layer | Technology |
 |---|---|
-| Backend | Node.js, Express.js |
-| Frontend | HTML, CSS, Bootstrap, EJS |
-| Database | MySQL |
-| Authentication | express-session |
-| File Upload | Multer |
-| Database Driver | mysql2 |
-| Other | connect-flash, body-parser |
+| **Backend** | Node.js, Express.js |
+| **Frontend** | HTML, CSS, Bootstrap, EJS |
+| **Database** | MySQL |
+| **Database Hosting** | Files.io |
+| **Authentication** | express-session |
+| **File Upload** | Multer |
+| **Database Driver** | mysql2 |
+| **Other** | connect-flash, body-parser |
 
 ---
 
