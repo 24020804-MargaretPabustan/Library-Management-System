@@ -466,31 +466,47 @@ app.get('/book/:id', checkAuthenticated, (req, res) => {
 });
 
 // Delete book route ( GET  method)
-app.get('/deleteBook/:id', checkAuthenticated, checkAdmin, (req, res) => {
+app.get('/deleteBook/:id', checkAuthenticated, checkAdmin, async (req, res) => {
     const bookId = req.params.id;
+    const db = pool.promise();
 
-    pool.query('DELETE FROM books WHERE bookId = ?', [bookId], (error, results) => {
-        if (error) {
-            console.error("Error deleting book:", error);
-            res.status(500).send('Error deleting book');
-        } else {
-            res.redirect('/library');
-        }
-    });
-});
-// Delete book route ( POST method)
-app.post('/deleteBook/:id', checkAuthenticated, checkAdmin, (req, res) => {
-    const bookId = req.params.id;
+    try {
+        // Check whether the book exists
+        const [books] = await db.query(
+            'SELECT * FROM books WHERE bookId = ?',
+            [bookId]
+        );
 
-    pool.query('DELETE FROM books WHERE bookId = ?', [bookId], (error, results) => {
-        if (error) {
-            console.error("Error deleting book:", error);
-            res.status(500).send('Error deleting book');
-        } else {
-            res.redirect('/library');
+        if (books.length === 0) {
+            return res.status(404).send('Book not found');
         }
-    });
+
+        // Check whether this book has any loan history
+        const [loans] = await db.query(
+            'SELECT loan_id FROM book_loans WHERE book_id = ? LIMIT 1',
+            [bookId]
+        );
+
+        if (loans.length > 0) {
+            return res.status(400).send(
+                'This book cannot be deleted because it has existing loan records.'
+            );
+        }
+
+        // Safe to delete because nothing references this book
+        await db.query(
+            'DELETE FROM books WHERE bookId = ?',
+            [bookId]
+        );
+
+        res.redirect('/library');
+
+    } catch (error) {
+        console.error('Error deleting book:', error);
+        res.status(500).send('Error deleting book');
+    }
 });
+
 // Cart route ( GET method, add books to cart after checking if user is authenticated)
 // Add book to cart
 app.get('/cart/add/:id', (req, res) => {
