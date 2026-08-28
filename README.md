@@ -9,8 +9,8 @@ Built with **Node.js, Express.js, EJS, MySQL, and Bootstrap**, the system provid
 ## 🔗 Project Links
 
 - 💻 **GitHub Repository:** [View Source Code](https://github.com/MargaretPabustan/Library-Management-System)
-- 🎥 **Demo Video:** [Watch Project Demo](YOUR_GOOGLE_DRIVE_LINK)
-- 🌐 **Live Demo:** [View Live Application](YOUR_RENDER_LINK)
+- 🎥 **Demo Video:** [Watch Project Demo](https://drive.google.com/drive/folders/1d8AHHRZ4vZE0HREq-y-GdGHiKwQpN_iK?usp=sharing)
+- 🌐 **Live Demo:** [View Live Application](https://library-management-system-6-ixpj.onrender.com)
 
 ---
 
