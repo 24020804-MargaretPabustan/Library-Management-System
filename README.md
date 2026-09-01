@@ -405,13 +405,7 @@ http://localhost:3000
 
 ---
 
-## 🌐 Live Demo
 
-- 🌐 **Live Application:** [View Live Demo](YOUR_RENDER_LINK)
-- 🎥 **Demo Video:** [Watch Project Demo](YOUR_GOOGLE_DRIVE_LINK)
-- 💻 **GitHub Repository:** [View Source Code](https://github.com/MargaretPabustan/Library-Management-System)
-
-> **Note:** The live deployment may take some time to start. Running the application locally is recommended for faster testing.
 
 ### 🔐 Sample Login Credentials
 
